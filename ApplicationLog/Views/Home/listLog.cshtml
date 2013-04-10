@@ -1,0 +1,22 @@
+﻿<% Page Language="C#"%>
+@{
+    ViewBag.Title = "Liste des logs";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+<% Response.Write(DateTime.Now);%>
+<table>
+    <% foreach (var item in logs)%>
+        <tr>
+            <td><%= Html.Encode(item.at) %>
+            </td>
+            <td><%= Html.Encode(item.type) %>
+            </td>
+            <td><%= Html.Encode(item.message) %>
+            </td>
+        </tr>
+     <%}%>
+</table>
